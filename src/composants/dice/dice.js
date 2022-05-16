@@ -13,11 +13,6 @@ export class Dice extends Component {
     }
 
     render() {
-        if (this.state.num) {
-            return (
-                <p>Vous avez roulé un {this.state.num}</p>
-            )
-        };
 
         return (
             <div>
@@ -27,6 +22,10 @@ export class Dice extends Component {
                     rollDone={this.rollDoneCallback}
                     ref={dice => this.reactDice = dice}
                 />
+                {this.state.num ? 
+                    <p>Vous avez roulé un {this.state.num}</p>
+                    : null
+                }
             </div>
         )
     }
