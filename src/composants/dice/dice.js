@@ -19,8 +19,8 @@ export class Dice extends Component {
                 <p>Cliquer sur le dé pour le lancer :</p>
                 <ReactDice
                     numDice={1}
+                    defaultRoll={null} 
                     rollDone={this.rollDoneCallback}
-                    ref={dice => this.reactDice = dice}
                 />
                 {this.state.num ? 
                     <p>Vous avez roulé un {this.state.num}</p>
@@ -28,13 +28,6 @@ export class Dice extends Component {
                 }
             </div>
         )
-    }
-    
-
-
-
-    rollAll() {
-        this.reactDice.rollAll()
     }
 
     rollDoneCallback = (num) => {
